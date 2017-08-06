@@ -22,6 +22,7 @@ namespace ChatRoom.Hubs
         public void SendMessage(MessageViewModel message)
         {
             var user= Context.User;
+            var env=Context.Request.Environment;
             Clients.All.broadcastMessage(message);
             using (var connection = _connection.CreateConnection())
             {
