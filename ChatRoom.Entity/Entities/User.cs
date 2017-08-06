@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ChatRoom.Entity.Entities
 {
-    public class User: IdentityUser,IUser,IUser<string>
+    public class User
     {
         [Key] 
         public int Id { get; set; }
@@ -17,11 +17,6 @@ namespace ChatRoom.Entity.Entities
         public User()
         {
             Messages = new List<Message>();
-        }
-
-        string IUser<string>.Id
-        {
-            get { return base.Id; }
         }
     }
 }
