@@ -4,6 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ChatRoom.Entity
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class ChatContext: IdentityDbContext<IdentityUser>
     {
         public ChatContext() : base("DefaultConnection")

@@ -206,3 +206,5 @@ E:\Github\ChatRoom.Web\ChatRoom\ChatRoom\bin\System.Web.Http.WebHost.xml
 E:\Github\ChatRoom.Web\ChatRoom\ChatRoom\obj\Debug\ChatRoom.csprojResolveAssemblyReference.cache
 E:\Github\ChatRoom.Web\ChatRoom\ChatRoom\obj\Debug\ChatRoom.dll
 E:\Github\ChatRoom.Web\ChatRoom\ChatRoom\obj\Debug\ChatRoom.pdb
+E:\Github\ChatRoom.Web\ChatRoom\ChatRoom\bin\MySql.Data.dll
+E:\Github\ChatRoom.Web\ChatRoom\ChatRoom\bin\MySql.Data.Entity.EF6.dll

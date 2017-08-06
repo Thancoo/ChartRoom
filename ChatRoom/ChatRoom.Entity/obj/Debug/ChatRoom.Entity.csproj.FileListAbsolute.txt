@@ -105,12 +105,7 @@ E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\bin\Debug\System.Net.Http.Format
 E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\bin\Debug\System.Web.Http.xml
 E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\bin\Debug\System.Web.Http.Owin.xml
 E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.csprojResolveAssemblyReference.cache
-E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.Migrations.addManytoMany.resources
-E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.Migrations.201608311539391_userKeytoString.resources
-E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.Migrations.AddAothr.resources
-E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.Migrations.addforegineproperies.resources
-E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.Migrations.addforegineproperies2.resources
-E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.Migrations.201608311351005_addManytoMany.Designer.resources
-E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.csproj.GenerateResource.Cache
 E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.dll
 E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\obj\Debug\ChatRoom.Entity.pdb
+E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\bin\Debug\MySql.Data.dll
+E:\Github\ChatRoom.Web\ChatRoom\ChatRoom.Entity\bin\Debug\MySql.Data.Entity.EF6.dll
