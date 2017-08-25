@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C0060FA-6457-4F92-B579-F6F3EF9DE430}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChatRoom.Interface</RootNamespace>
+    <AssemblyName>ChatRoom.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IBuiness\Auth\IAuthBuiness.cs" />
+    <Compile Include="IBuiness\Group\IGroupBuiness.cs" />
+    <Compile Include="IBuiness\Base\IAOBusinessBase.cs" />
+    <Compile Include="IBuiness\Message\IMessageBuiness.cs" />
+    <Compile Include="IBuiness\Operation\IOperationMessageBuiness.cs" />
+    <Compile Include="IBuiness\User\IUserBuiness.cs" />
+    <Compile Include="IRepository\Auth\Auth.cs" />
+    <Compile Include="IRepository\Group\IGroupRepository.cs" />
+    <Compile Include="IRepository\Operation\IOperationMessageRepository.cs" />
+    <Compile Include="IRepository\Base\IAORepositoryBase.cs" />
+    <Compile Include="IRepository\Message\IMessageRepository.cs" />
+    <Compile Include="IRepository\User\IUserRepository.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChartRoom.Common\ChatRoom.Common.csproj">
+      <Project>{E4A153C3-ABE2-49F5-9C3B-5AE3E946FAB2}</Project>
+      <Name>ChatRoom.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChartRoom.Model\ChatRoom.Model.csproj">
+      <Project>{df9d6067-abff-48e9-a2ef-bae1c0d03f01}</Project>
+      <Name>ChatRoom.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChatRoom.Entity\ChatRoom.Entity.csproj">
+      <Project>{f9f588b4-e90a-4209-8884-77cc4a3f2619}</Project>
+      <Name>ChatRoom.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

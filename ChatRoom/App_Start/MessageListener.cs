@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Web;
-using ChatRoom.Entity;
-using ChatRoom.Entity.Entities;
-using ChatRoom.Entity.Interfaces;
+using Autofac;
+using ChatRoom.Common;
+using ChatRoom.Common.RequestModel;
+using ChatRoom.Common.Utils;
+using ChatRoom.Interface;
+using ChatRoom.Interface.IBuiness.Message;
 using ChatRoom.Model;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using ChatRoom.Model.Message;
 
-namespace ChatRoom.App_Start
+namespace ChatRoom
 {
     /// <summary>
     /// Represent RabbitMQ Bus
@@ -22,7 +22,7 @@ namespace ChatRoom.App_Start
     {
         private IConnection _connection;
         private IModel _channel;
-        private IUnitOfWork _repository;
+        private IMessageBuiness _messageBll;
 
         #region Singleton
         private static readonly Lazy<MessageListener> _instance = new Lazy<MessageListener>(() => new MessageListener());
@@ -37,8 +37,7 @@ namespace ChatRoom.App_Start
                 UserName = "guest",
                 Password = "guest"
             };
-
-            _repository = new UnitOfWork(new ChatContext());
+            this._messageBll=ChatRoomEnv.Container.Resolve<IMessageBuiness>();
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
             _channel.ExchangeDeclare(exchange: "test-exchange",
@@ -55,7 +54,7 @@ namespace ChatRoom.App_Start
             consumer.Received += ConsumerOnReceived;
 
             _channel.BasicConsume(queue: queueName,
-                noAck: true,
+                autoAck: true,
                 consumer: consumer);
         }
 
@@ -68,11 +67,20 @@ namespace ChatRoom.App_Start
         private void ConsumerOnReceived(object sender, BasicDeliverEventArgs ea)
         {
             var body = ea.Body;
+            
             var json = Encoding.UTF8.GetString(body);
-            var message = JsonConvert.DeserializeObject<MessageViewModel>(json);
-
-            _repository.Users.AddMessages(message.SenderId, message.Body, message.Attachment);
-            _repository.Complete();
+            try
+            {
+                var message = JsonConvert.DeserializeObject<TransMessageModel>(json);
+                if (!message.RelayFromId.HasValue)
+                    return;
+                this._messageBll.AddMessage(message.RelayFromId.Value, message.RelayToId.Value, message.EventType, message.MsgType,message.ContentType, message.Content);
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog(GetType(),ex);
+            }
+            
         }
     }
 }

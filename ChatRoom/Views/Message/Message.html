@@ -1,0 +1,137 @@
+﻿<div class="message_container">
+    <div class="float_pannel">
+        <!-- CHAT PANEL -->
+        <div class="chat_component chat_category">
+            <div class="chat_list_heard">
+                <div class="user_head_image">
+                    <img class="img-circle heard_image" ng-src="{{(UserInfo||{}).HeadImage||'https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=92e00c9b8f5494ee8722081f15ce87c3/29381f30e924b899c83ff41c6d061d950a7bf697.jpg'}}">
+                    <div class="heard_hover_action_list" style="z-index: 100000; display: none;">
+                        <div class="hover_option_name"><span>昵称：</span><span ng-bind="UserInfo.UserName"></span></div>
+                        <div class="hover_option_logout"><span class="btn-error btn_logout" ng-click="LoginOut()">退出登录</span></div>
+                    </div>
+                </div>
+            </div>
+            <ul class="list-group chat_cate_list">
+                <li class="list-group-item cate_selected" type="link">
+                    <div class="chat_cate_heard_group">
+                        <div class="chat_cate_heard_title">
+                            群聊
+                        </div>
+                        <div class="chat_cate_heard_disc">
+                            <div></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item" type="link">
+                    <div class="chat_cate_heard_group">
+                        <div class="chat_cate_heard_title">
+                            聊天
+                        </div>
+                        <div class="chat_cate_heard_disc">
+                            <div></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item" type="link">
+                    <div class="chat_cate_heard_title">
+                        <div class="chat_cate_heard_image">
+                            公告
+                        </div>
+                        <div class="chat_cate_heard_disc">
+                            <div></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="chat_component chat_list">
+            <div class="chat_list_control firend_search">
+                <div class="firend_search_input_group">
+                    <input class="firend_search_input" maxlength="15" placeholder="Search" />
+                    <button class="chat_add_firend_btn">+</button>
+                </div>
+            </div>
+            <ul class="chat_list_control list-group firend_group">
+                <li class="firend_group_item" type="link" ng-repeat="itm in GroupList | orderBy:'LastChatTime':False">
+                    <div class="message_stage" ng-click="ChangeChatContext('group',itm.Id)">
+                        <div class="firend_head_image">
+                            <img ng-src="{{itm.HeadImg}}" class="img-circle" />
+                        </div>
+                        <div class="firend_discribe">
+                            <div class="firend_name" ng-bind="itm.Name"></div>
+                            <div class="last_chat_date" ng-show="itm.LastChatTime" ng-bind="itm.LastChatTime*1000 | date:'yyyy-MM-dd HH:mm:ss'"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="chat_component chat_body">
+            <div class="chat_body_notify_container">
+                <div class="chat_body_announcement">
+                    <span class="announcement_icon  glyphicon glyphicon-bullhorn"></span><span>我是小提示，我是小公告，我是可以带连接的小公告！！！</span>
+                </div>
+                <div class="chat_body_head">
+                    <div class="chat_to_disc">
+                        <div ng-bind="ChatSessionContext.Name||'默认群'"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat_body_body">
+                <ul class="chat mCustomScrollbar" data-mcs-theme="minimal-dark">
+                    <li class="chat_itm" ng-repeat="chatItm in Messages[ChatSessionContext.Id] | orderBy : CreatedOn : reverse" ng-switch on="chatItm.EventType">
+                        <div ng-switch-when="chat" ng-class="chatItm.RelayFromId === UserInfo.Id  ? 'right clearfix' : 'left clearfix'">
+                            <div class="chat-head">
+                                <span ng-show="chatItm.RelayFromId === UserInfo.Id " class="chat-img pull-right">
+                                    <img ng-src="{{(UserInfo||{}).HeadImage || 'http://placehold.it/100/FA6F57/fff&text=I%27m'}}" class="img-circle">
+                                </span>
+                                <span ng-show="chatItm.RelayFromId !== UserInfo.Id " class="chat-img pull-left">
+                                    <img ng-src="{{((GroupFriendList[chatItm.RelayToId]||{})[chatItm.RelayFromId]||{})['HeadImage']||'http://placehold.it/100/55C1E7/fff&amp;text=User'}}" class="img-circle">
+                                </span>
+                            </div>
+                            <div class="chat-body clearfix">
+                                <div class="header" ng-class="chatItm.RelayFromId === UserInfo.Id  ? 'header-timetip-left' : 'header-timetip-right'">
+                                    <span ng-class="chatItm.RelayFromId === UserInfo.Id  ? 'text-muted' : 'pull_right text-muted'">
+                                        <span class="glyphicon glyphicon-time"></span><span ng-bind="chatItm.CreatedOn*1000 | date:'yyyy-MM-dd HH:mm:ss'"></span>
+                                    </span>
+                                </div>
+                                <!---留有扩展，以后可以签到等··-->
+                                <div class="chat_content mCustomScrollbar" ng-switch on="chatItm.MsgType">
+                                    <div ng-switch-when="group">
+                                        <div ng-switch on="chatItm.ContentType">
+                                            <div ng-switch-when="text" contenteditable="false" ng-bind-html="chatItm.Content | DecodeEnjoy"></div>
+                                            <a ng-switch-when="link" ng-href="chatItm.Content" ng-bind-html="chatItm.Content | externalLink"></a>
+                                            <img ng-switch-when="image" ng-src="{{chatItm.Content}}" class="img-rounded" style="max-width: 40%" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-switch-when="systemnotify">
+                            系统提示！！
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- CHAT ACTIONS -->
+            <div class="chat_body_footer">
+                <div class="chat_addon_group">
+                    <span id="chat_enjoy" class="chat_enjoy addon-item"> </span>
+                    <span class="chat_image addon-item glyphicon glyphicon-picture"></span>
+                </div>
+                <div class="chat_content_edit" ng-switch on="UserInfo.UserType">
+                    <div ng-switch-when="visitor" id="container_input_vistor" class="form-control input-sm chat_content chat_vistor">
+
+                    </div>
+                    <div ng-switch-default id="container_input" contenteditable="true" class="form-control input-sm chat_content" ng-model="message.Content" ng-paste="PasteEncode($event)">
+                    </div>
+                    <span class="input-group-btn chat_action_btn_group">
+                        <button class="chat_send_message" id="btn-chat" ng-click="newMessage()">发送</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<input ng-style="fileStyle" class="glyphicon glyphicon-picture hide_file_ele" type="file" ng-file-select="upload(file)" ng-model="file" name="file" accept="image/*">

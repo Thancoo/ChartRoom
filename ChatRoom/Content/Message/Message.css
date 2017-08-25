@@ -1,0 +1,757 @@
+﻿body {
+    background-image: url(http://img.juimg.com/tuku/yulantu/121212/267865-12121215541766.jpg);
+    background-repeat: no-repeat;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+.chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    overflow: auto;
+}
+.chat li{
+    width:100%;
+}
+.chat li>div {
+    width:100%;
+    height:100%;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+.chat li>div .chat-img{
+    height:50px;
+    width:50px;
+}
+.chat li>div .chat-img>img{
+    height:50px;
+    width:50px;
+}
+.chat li>div .chat-body{
+    border-radius:5px;
+    height:auto;
+    width:auto;
+    min-height:50px !important;
+    max-height:300px;
+    min-width:100px !important;
+    max-width:70%;
+    word-break: break-all;
+}
+.chat li>div.left .chat-body {
+    margin-left: 60px;
+    margin-right:auto;
+}
+.chat li>div.right .chat-body {
+    margin-right: 60px;
+    margin-left:auto;
+}
+
+.chat_vistor {
+    background-color: rgba(200, 200, 200, .8) !important;
+}
+
+.chat-body .chat_content div{
+    margin: 0;
+    color: #777777;
+    word-wrap:break-word;
+    max-height:200px;
+    overflow-wrap: break-word;
+    display: block;
+    overflow: auto;
+}
+.chat-body .chat_content img{
+    min-height:20px;
+    min-width:20px;
+    max-height:50px;
+    max-width: 50px;
+}
+.chat-body>.header-timetip-right {
+    text-align: right;
+}
+.chat-body>.header-timetip-left {
+    text-align: left;
+}
+.panel .slidedown .glyphicon, .chat .glyphicon {
+    margin-right: 5px;
+}
+
+.panel-body {
+    height: 500px;
+}
+
+.chatcontainer {
+    position: absolute;
+    width: 60%;
+    height: 90%;
+    background: rgba(370, 370, 370, .8);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    right: 0px;
+    bottom: 0px;
+    box-shadow: -30px -30px 30px #000033;
+    box-shadow: -30px -30px 30px rgba(0, 0, 51, 0);
+}
+
+.container-drkbak {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .4);
+}
+
+.message_container {
+    height: 100%;
+    width: 100%;
+    box-shadow: -30px -30px 30px #000000;
+    box-shadow: -30px -30px 30px rgba(0, 0, 0, 0.2);
+}
+
+.float_pannel {
+    height: 100%;
+    width: 100%;
+}
+/**/
+.viewcontainer {
+    height: 100%;
+    width: 100%;
+}
+
+.float_pannel .chat_component {
+    float: left;
+    height: 100%;
+}
+
+.chat_category {
+    width: 10%;
+    background-color: rgba(100, 100, 100, .8);
+}
+
+.chat_list {
+    width: 30%;
+    background-color: rgba(100, 100, 100, .3);
+}
+
+.chat_list .chat_list_control {
+}
+
+.chat-body {
+    width: 70%;
+    background-color: rgba(370, 370, 370, .6);
+}
+
+.clear {
+    clear: both;
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+/**/
+.user_head_image {
+    height: 80px;
+    width: 80px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.user_head_image img {
+    height: 60px !important;
+    width: 60px !important;
+    cursor: pointer;
+}
+
+.chat_cate_list {
+    text-align: center;
+}
+
+.firend_head_image {
+    width: 40px;
+    height: 100%;
+    top: 0px;
+    vertical-align: middle;
+}
+
+.firend_head_image > img {
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+}
+
+.chatcontainer {
+}
+
+.chat_body {
+    width: 60%;
+    height: 100%;
+}
+
+.chat_body_head {
+    /*border-top-right-radius: */
+    width: 100%;
+    background-color: rgba(250, 250, 250, .5);
+    height: 40px;
+    text-align: left;
+}
+
+.chat_body_body {
+    width: 100%;
+    height: 65%;
+}
+
+.chat_body_footer {
+    width: 100%;
+    height: calc(100% - 65% - 60px);
+    background-color: rgba(0,0,0,.2);
+    position: relative;
+}
+
+.chat_list_heard {
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    border-bottom: 3px solid rgba(0,0,0,.2);
+}
+
+.chat_list_heard .user_head_image {
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+
+.user_head_image img {
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
+}
+
+.chat_group_itm {
+    background-color: rgba(0,0,0,0) !important;
+    border-color: rgba(0,0,0,0) !important;
+}
+
+.chat_cate_list {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0;
+    height: calc(100% - 100px);
+    text-align: center;
+}
+
+.chat_cate_list > .list-group-item {
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    text-align: center;
+    line-height: 200%;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 0 !important;
+}
+
+.chat_cate_list .chat_cate_heard_image {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 30px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.heard_hover_action_list {
+    position: absolute;
+    border-radius: 5px;
+    height: 150px;
+    width: 200px;
+    text-align: center;
+    background-color: rgba(370,370,370,0.9);
+    left: 100%;
+    top: 20%;
+    z-index: 10000;
+}
+
+.heard_hover_action_list > div {
+    margin-top: 10%;
+}
+
+.heard_hover_action_list > .hover_option_logout {
+    position: absolute;
+    bottom: 10px;
+    width: 40%;
+    border-radius: 10px;
+    border: 1px solid rgba(200,100,10,.4);
+    padding: 5px;
+    background-color: rgba(240,200,10,.8);
+    text-align: center;
+    color: #fff;
+    left: 30%;
+    cursor: pointer;
+}
+
+.chat_cate_heard_group {
+    width: 100%;
+    height: 100%;
+}
+
+.chat_cate_heard_group div {
+    display: inline-block;
+}
+
+.chat_cate_list .chat_cate_heard_image img {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+}
+
+.chat_cate_list .chat_cate_heard_disc {
+    width: 75%;
+}
+
+.chat_cate_list .chat_cate_heard_title {
+    color: #ffffff;
+}
+
+.firend_search {
+    height: 50px;
+    width: 100%;
+    vertical-align: middle;
+    padding-top: 15px;
+}
+
+.firend_search_input_group {
+    text-align: center;
+}
+
+.firend_search_input_group > input {
+    border-color: rgba(0,0,0,.2);
+    box-shadow: unset;
+    border-width: 0;
+}
+
+.firend_search_input_group > button {
+    border-color: rgba(0,0,0,.2);
+    box-shadow: unset;
+    border-width: 0;
+    width: 20px;
+}
+
+.firend_search_input {
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0,.2);
+    height: 25px;
+    font-size: 15px;
+}
+
+.chat_add_firend_btn {
+    display: inline-block;
+    margin-left: 5px;
+    border-radius: 3px;
+    height: 25px;
+    width: 25px !important;
+    font-size: 15px;
+    background-color: rgba(0, 0, 0, .2);
+    text-align: center;
+}
+
+.firend_group {
+    height: calc(100% - 50px);
+}
+.firend_group_item {
+    width: 100%;
+    height: 60px;
+}
+.firend_group_item>div.message_stage {
+    width: 100%;
+    height: 100%;
+    margin-top:2px;
+    background-color: rgba(250,250,250,.4);
+    cursor:pointer;
+}
+
+.firend_group_item > div>div {
+    float: left;
+}
+
+.firend_name {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.firend_state {
+    font-size: 10px;
+}
+
+.last_chat_date {
+    font-size: 10px;
+}
+
+.chat_body_announcement {
+    background-color: rgba(0, 0, 0, .5);
+    color: rgba(255, 0, 0,.8);
+    width: 100%;
+}
+
+.chat_body_announcement > .announcement_icon {
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 100%;
+}
+
+.chat_body_notify_container {
+    height: 60px;
+}
+
+.chat_to_disc {
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.chat_to_disc > div {
+    line-height: 200%;
+}
+
+.chat_addonn_group {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.addon-item {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 100%;
+    height: 25px;
+    width: 25px;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.chat_enjoy {
+    background-image: url('../../images/emjoy/13.gif');
+}
+
+.chat_content {
+    display: block;
+    height: 100% !important;
+    width: 100%;
+    -webkit-user-modify: read-write-plaintext-only;
+    -moz-user-modify: read-write-plaintext-only;
+    user-modify: read-write-plaintext-only;
+}
+
+.chat_action_btn_group {
+    position: absolute !important;
+    display: inline-block;
+    bottom: 5px;
+    right: 60px;
+}
+
+.hide_file_ele {
+    display: inline-block;
+    visibility: hidden;
+}
+
+.chat_addon_group {
+    height: 40px;
+}
+
+.chat_addon_group > span {
+    cursor: pointer;
+}
+
+.chat_content_edit {
+    height: calc(100% - 40px);
+}
+
+.chat_send_message {
+    background-color: #f0ad4e;
+    border: none;
+    display: inline-block;
+    height: 30px;
+    width: 50px;
+    text-align: center;
+    line-height: 100%;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 15px;
+}
+
+.container_input img {
+    max-height: 30px !important;
+    max-width: 30px !important;
+}
+.container_input{
+    overflow: auto;
+    word-break: break-all;
+}
+
+.comment {
+    width: 680px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.comment h3 {
+    height: 28px;
+    line-height: 28px;
+}
+
+.com_form {
+    width: 100%;
+    position: relative;
+}
+
+.input {
+    width: 99%;
+    height: 60px;
+    border: 1px solid #ccc;
+}
+
+.com_form p {
+    height: 28px;
+    line-height: 28px;
+    position: relative;
+}
+
+span.emotion {
+    width: 42px;
+    height: 20px;
+    background: url(icon.gif) no-repeat 2px 2px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+span.emotion:hover {
+    background-position: 2px -28px;
+}
+
+.qqFace {
+    margin-top: 4px;
+    background: #fff;
+    padding: 2px;
+    border: 1px #dfe6f6 solid;
+}
+
+.qqFace table td {
+    padding: 0px;
+}
+
+.qqFace table td img {
+    cursor: pointer;
+    border: 1px #fff solid;
+}
+
+.qqFace table td img:hover {
+    border: 1px #0066cc solid;
+}
+
+#show {
+    width: 680px;
+    margin: 20px auto;
+}
+/*以上是表情控件的小样式*/
+.login_container {
+    position: absolute;
+    text-align: center;
+    height: 50%;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid rgba(250, 250, 250, .5);
+    top: 25%;
+    left: 25%;
+}
+
+.form_content {
+    text-align: center;
+    width: 80%;
+    margin: 15% auto;
+}
+
+.form_content > .loginpannel > div {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form_content > .loginpannel > div > span.input-group-addon {
+    width: 30%;
+}
+
+.cate_selected {
+    background-color: rgba(200, 200, 200, .8) !important;
+    border-radius: 4px !important;
+}
+
+.login_btn_group > button {
+    height: 40px;
+}
+
+.register_pannel {
+    position: absolute;
+    display: block;
+    height: 500px;
+    width: 500px;
+    left:calc(50% - 250px);
+    top: calc(50% - 250px);
+    border-radius: 5px;
+    border: 1px solid rgba(250,250,250,.7);
+    padding: 40px;
+    text-align: center;
+}
+
+.register_pannel > .forminfo > div {
+    position:relative;
+    margin-top: 10px;
+    width: 400px;
+}
+
+.register_pannel > .forminfo .input-group-addon {
+    width: 80px;
+}
+
+.login_file_image {
+    height: 1px !important;
+    height: 1px !important;
+    max-width: 0px !important;
+    max-height: 0px !important;
+    display: none !important;
+}
+
+.register_pannel > .forminfo .btn-warning {
+    height: 35px !important;
+}
+
+.file_selector_prox {
+    position: relative;
+    height: 120px;
+    width: 120px;
+    margin-left:50%;
+}
+
+.file_selector_prox > img {
+    height: 100%;
+    width: 100%;
+}
+
+.prox_change_addon {
+    position: absolute;
+    background-color: rgba(0,0,0,.5);
+    width: 50px !important;
+    height: 30px !important;
+    bottom: 0px !important;
+    top: calc(100% - 31px) !important;
+    right: calc(50% - 35px) !important;
+}
+
+.addon_left {
+    left: 10px !important;
+    border-bottom-left-radius: 100% !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.addon_right {
+    left: 60px !important;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 100% !important;
+}
+
+.edit_head_iamge_btn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    top: 0px;
+    left: 0px;
+}
+
+.edit_icon {
+    display: block;
+    color: rgba(255, 255, 255, 1);
+    margin-top:85px;
+    margin-left: auto;
+    margin-right: auto;
+    width:100px;
+    height:35px;
+    font-size:20px;
+    padding-top:9px;
+    border-bottom-left-radius: 100px !important;
+    border-bottom-right-radius: 100px !important;
+}
+.online_state:before{
+    content:"";
+    display:inline-block;
+    height:10px;
+    width:10px;
+    border-radius:5px;
+    line-height:200%;
+}
+.online_state{
+    font-size:10px;
+    color:#fff;
+}
+.offline:before{
+    background-color:rgba(370,0,0,.5);
+}
+.online:before{
+    background-color:rgba(0,370,0,.5);
+}
+/*搜索动漫*/
+
+
+.example-animate-container {
+    background:white;
+    border:1px solid black;
+    list-style:none;
+    margin:0;
+    padding:0 10px;
+}
+
+.animate-repeat {
+    line-height:40px;
+    list-style:none;
+    box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+    opacity:0;
+    max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+    opacity:1;
+    max-height:40px;
+}
+/*动漫结束*/

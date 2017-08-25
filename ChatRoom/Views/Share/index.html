@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8 ]><html lang="en" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <title>Chat room</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../../Content/Message/Message.css">
+    <link href="../../Component/mCustomerScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+    <!---兼容IE9之前的浏览器-->
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container-drkbak">
+        <div class="chatcontainer" ng-app="chatApp">
+            <div class="viewcontainer" ui-view></div>
+        </div>
+    </div>
+<!-- INCLUDES -->
+    <script src="../../Scripts/jquery-3.1.1.min.js"></script>
+    <script src="../../Component/mCustomerScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../Scripts/jquery.qqFace.js"></script>
+    <script src="../../Scripts/jquery.cookie-1.4.1.min.js"></script>
+    <script src="../../Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="../../signalr/hubs"></script>
+    <script src="../../Scripts/angular.min.js"></script>
+    <script src="../../Scripts/angular-mocks.js"></script>
+    <script src="../../Scripts/angular-route.min.js"></script>
+    <script src="../../Scripts/angular-file-upload.min.js"></script>
+    <script src="../../Scripts/angular-sanitize.min.js"></script>
+    <script src="../../Scripts/moment.js"></script>
+    <script src="../../Scripts/angular-moment.js"></script>
+    <script src="../../Scripts/angular-cookies.min.js"></script>
+    <script src="../../Scripts/angular-ui-router.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="../../Scripts/Common/app.js"></script>
+    <script src="../../Scripts/Common/app.config.js"></script>
+    <script src="../../Scripts/Filter/externalFilter.js"></script>
+    <script src="../../Scripts/Services/dataFactory.js"></script>
+    <script src="../../Scripts/Services/chatHub.js"></script>
+    <script src="../../Scripts/Services/chatBuiness.js"></script>
+    <script src="../../Scripts/Message/messageController.js"></script>
+    <script src="../../Scripts/User/userController.js"></script>
+</body>
+</html>

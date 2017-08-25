@@ -1,0 +1,44 @@
+﻿<div class="register_pannel">
+    <form action="" name="userregisterfrommodel" class="forminfo">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="file_selector_prox">
+                    <img src="../../images/Tulips.jpg" class="img-circle"/>
+                    <div class="edit_head_iamge_btn">
+                        <div class="glyphicon glyphicon-pencil  edit_icon"></div>
+                        <div class="prox_change_addon addon_left"></div>
+                        <div class="prox_change_addon addon_right"></div>
+                    </div>
+                </div>
+                <input type="file" class="form-control login_file_image" ng-model="userregisterfrom.HeardImage" ng-click="upload()" placeholder="Amount">
+            </div>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">用户名</span>
+            <input type="text" class="form-control" placeholder="用户名" ng-model="userregisterfrom.UserName" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Email</span>
+            <input type="email" class="form-control" placeholder="Email" ng-model="userregisterfrom.Email" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">性别</span>
+            <select class="form-control" ng-model="userregisterfrom.Sex">
+                <option selected="selected" value="男">男</option>
+                <option value="女">女</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">密码</span>
+            <input type="password" class="form-control" placeholder="密码" ng-model="userregisterfrom.Password" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">确认密码</span>
+            <input type="password" class="form-control" placeholder="确认密码" ng-model="userregisterfrom.ConfirmPassword" aria-describedby="basic-addon1">
+        </div>
+        <div class="col-md-10">
+            <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="Register()">注册</button>
+            <button class="btn btn-warning glyphicon glyphicon-arrow-right" ng-click="ToLogin()">前往登录</button>
+        </div>
+    </form>
+</div>

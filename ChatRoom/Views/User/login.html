@@ -1,0 +1,23 @@
+﻿<div class="login_container">
+    <div class="pre_btns">
+        <div class="btn_groups">
+            <span class="btn-sm"></span>
+        </div>
+    </div>
+    <div class="form_content">
+        <form class="loginpannel" name="userfrommodel">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">用户名</span>
+                <input type="text" class="form-control" placeholder="用户名" ng-model="userfrom.UserName" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">密码</span>
+                <input type="text" class="form-control" placeholder="密码" ng-model="userfrom.Password" aria-describedby="basic-addon1">
+            </div>
+            <div class="login_btn_group">
+                <button class="btn btn-warning" ng-click="Login()">登录</button>
+                <button class="btn btn-warning btn-sm glyphicon glyphicon-arrow-right" id="btn-chat" ng-click="ToRegister()">前往注册</button>
+            </div>
+        </form>
+    </div>
+</div>
